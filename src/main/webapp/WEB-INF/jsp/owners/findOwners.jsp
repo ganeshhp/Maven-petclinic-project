@@ -31,4 +31,5 @@
 
     <br/>
     <a class="btn btn-default" href='<spring:url value="/owners/new" htmlEscape="true"/>'>Add Owner</a>
+    <a class="btn btn-default" href='<spring:url value="/owners/new" htmlEscape="true"/>'>New Owner</a>
 </petclinic:layout>
