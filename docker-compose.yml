@@ -1,0 +1,6 @@
+version: '3'
+services:
+  applicationserver:
+    build: .
+    ports:
+    - "9100:8080"
