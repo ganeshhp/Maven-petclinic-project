@@ -3,4 +3,4 @@ services:
   applicationserver:
     image: ganeshhp/maven-petclinic-project:latest
     ports:
-    - "9100:8080"
+    - "9150:8080"
