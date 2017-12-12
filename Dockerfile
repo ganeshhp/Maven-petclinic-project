@@ -4,6 +4,8 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 
 RUN mkdir -p "$CATALINA_HOME"
+    && apt-get update
+
 WORKDIR $CATALINA_HOME
 
 # see https://www.apache.org/dist/tomcat/tomcat-8/KEYS
