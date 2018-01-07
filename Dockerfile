@@ -37,4 +37,5 @@ RUN set -x \
 ADD ./petclinic.war $CATALINA_HOME/webapps/
 
 EXPOSE 8082
+EXPOSE 8090
 CMD ["catalina.sh", "run"]
