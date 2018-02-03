@@ -37,7 +37,7 @@ node {
  sh 'sudo /opt/apache-tomcat-8.5.21/bin/startup.sh'
  }
  
- sh 'git push https://ganeshhp:<password>@github.com/ganeshhp/Maven-petclinic-project.git --all'
+ # sh 'git push https://ganeshhp:<password>@github.com/ganeshhp/Maven-petclinic-project.git --all'
  
  notify('Completed')
 }
