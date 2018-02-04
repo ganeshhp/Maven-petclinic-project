@@ -10,7 +10,7 @@ node {
  }
  stage ('Build_Test and Package') {
     sh 'mvn clean verify package'
-    junit 'target/surefire-reports/TEST*.xml'
+ //   junit 'target/surefire-reports/TEST*.xml'
  }
  
  stage ('Archive and Notify') {
