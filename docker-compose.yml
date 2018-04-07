@@ -4,3 +4,7 @@ services:
     image: ganeshhp/maven-petclinic-project:latest
     ports:
     - "9150:8080"
+
+#    build: .
+#    ports:
+#    - "9150:8080"
