@@ -10,7 +10,7 @@ node {
  }
  stage ('Build_Test and Package') {
     sh 'mvn clean verify package'
-    junit 'target/surefire-reports/TEST*.xml'
+ //   junit 'target/surefire-reports/TEST*.xml'
  }
  
  stage ('Archive and Notify') {
@@ -37,7 +37,7 @@ node {
  sh 'sudo /opt/apache-tomcat-8.5.21/bin/startup.sh'
  }
  
- sh 'git push https://ganeshhp:<password>@github.com/ganeshhp/Maven-petclinic-project.git --all'
+ // sh 'git push https://ganeshhp:<password>@github.com/ganeshhp/Maven-petclinic-project.git --all'
  
  notify('Completed')
 }
