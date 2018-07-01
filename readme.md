@@ -65,7 +65,7 @@ File -> Import -> Maven -> Existing Maven project
     </td>
   </tr>
   <tr>
-    <th width="300px">Inside the 'Web' layer</th><th width="300px">Files</th>
+    <th width="300px">Inside the 'Web host file' layer</th><th width="300px">Files</th>
   </tr>
   <tr>
     <td>Spring MVC - XML integration</td>
