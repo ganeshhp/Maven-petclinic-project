@@ -80,7 +80,14 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
+	<dependency>
+    	    <groupId>org.codehaus.mojo</groupId>
+	    <artifactId>sonar-maven-plugin</artifactId>
+	    <version>3.2</version>
+	    <type>pom</type>
+	</dependency>
+
+	 <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
         </dependency>
@@ -444,7 +451,19 @@
                 </plugins>
             </build>
         </profile>
-   </profiles>
 
+	<profile>
+		<id>sonar</id>
+		<activation>
+		<activeByDefault>true</activeByDefault>
+		</activation>
+		<properties>
+	<!-- Optional URL to server. Default value is http://localhost:9000 -->
+		<sonar.host.url>
+		http://192.168.33.1:9000	
+		</sonar.host.url>
+		</properties>
+		</profile>
+	</profiles>
     <url>demopetclinic</url>
 </project>
