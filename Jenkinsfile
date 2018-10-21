@@ -1,4 +1,4 @@
-node 'slave' {
+node 'slave'{
     
  notify('Started')
  
