@@ -1,6 +1,6 @@
-node 'slave'{
+node ('slave'){
     
- notify('Started')
+ notify ('Started')
  
  stage ('SCM_Checkout') {
     checkout([$class: 'GitSCM',
