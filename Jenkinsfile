@@ -1,3 +1,4 @@
+/*new declarative syntax used
 pipeline {
  agent none
     stages {
