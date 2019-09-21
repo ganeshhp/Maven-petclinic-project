@@ -3,14 +3,14 @@ pipeline {
  agent none
     stages {
       stage('SCM_Chekout') {
-          agent { label "master" }
+          agent { label 'master' }
 	steps {
-	                checkout([$class: 'GitSCM',
-                	    branches: [[name: '*/master']],
-                    	   doGenerateSubmoduleConfigurations: false,
-                    	   extensions: [],
-                     	   submoduleCfg: [],
-                    	   userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]])
+	         checkout([$class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]])
             }
         }
 parallel {
