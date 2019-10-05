@@ -12,7 +12,8 @@ pipeline {
                     userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]])
             }
         }
-     stage('code-validation') {
+            parallel {
+        stage('code-validation') {
          agent { label "master" }
 	steps {
                        bat 'mvn -f pom.xml sonar:sonar'
@@ -25,4 +26,5 @@ pipeline {
        }
     }
   }
+}
 }
