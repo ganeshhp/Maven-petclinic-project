@@ -6,9 +6,10 @@ pipeline {
           agent { label 'master' }
 	steps {
 	  checkout([$class: 'GitSCM', 
-          branches: [[name: '*/master']], 
-          doGenerateSubmoduleConfigurations: false, 
-          userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]])
+                    branches: [[name: '*/master']], 
+                    doGenerateSubmoduleConfigurations: false, 
+                    extensions: [], submoduleCfg: [], 
+                    userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]])
             }
         }
 parallel {
