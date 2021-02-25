@@ -1,5 +1,5 @@
 
-FROM ganeshhp/tomcat_01132021:latest
+FROM tomcat:9.0
 
 ADD ./petclinic.war /opt/tomcat/webapps/
  
