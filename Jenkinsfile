@@ -14,7 +14,7 @@ node ('master') {
     sh 'mvn clean package'
   }
   
-        input 'proceed with artifact upload?'
+  input 'proceed with artifact upload?'
         
   stage ('artifact-repo'){
     sh 'curl -uuser1:AP2tXv3LMf5WVPWuRUdGVHCCa4B -T target/petclinic.war "https://pluforum.jfrog.io/artifactory/webapp-sample/petclinic.war"'
