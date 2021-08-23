@@ -20,6 +20,13 @@ node ('master') {
     sh 'curl -uuser1:AP2tXv3LMf5WVPWuRUdGVHCCa4B -T target/petclinic.war "https://pluforum.jfrog.io/artifactory/webapp-sample/petclinic.war"'
   }
   
+  stage ('publish_reports') {
+    publishHTML([allowMissing: false, 
+         alwaysLinkToLastBuild: false, keepAll: false, 
+         reportDir: 'target/site/jacoco', 
+         reportFiles: 'index.html', reportName: 'HTML Report', 
+         reportTitles: 'test_report'])
+  }
   stage ('archive') {
     archiveArtifacts artifacts: 'target/petclinic.war', followSymlinks: false
   }
