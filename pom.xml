@@ -274,6 +274,13 @@
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+        <dependency>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.0.2155</version>
+        </dependency>
+
     </dependencies>
 
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
