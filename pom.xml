@@ -405,33 +405,6 @@
     </reporting>
     <profiles>
 		<profile>
-			<id>bower-install</id>
-  			<build>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-                    <version>1.4.0</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>exec</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<executable>bower</executable>
-						<arguments>
-							<argument>install</argument>
-						</arguments>
-						<workingDirectory>${basedir}</workingDirectory>
-					</configuration>
-				</plugin>
-			</plugins>
-		  </build>
-		</profile>
-        <profile>
             <id>less-install</id>
             <build>
                 <plugins>
