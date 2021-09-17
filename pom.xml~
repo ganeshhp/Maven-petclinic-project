@@ -460,11 +460,7 @@
 		<properties>
 	<!-- Optional URL to server. Default value is http://localhost:9000 -->
 		<sonar.host.url>
-<<<<<<< HEAD
-		http://35.244.11.29:9000
-=======
-			http://35.244.50.28:9000 
->>>>>>> 7ef8dc24adba278f82dc44da5120a88f90fa865a
+			http://192.172.33.10:9000/
 		</sonar.host.url>
 		</properties>
 		</profile>

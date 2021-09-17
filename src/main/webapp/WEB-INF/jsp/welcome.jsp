@@ -4,7 +4,7 @@
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags" %>
 
 <petclinic:layout pageName="home">
-    <h2><fmt:message key="welcome"/></h2>
+    <h2><fmt:message key="Welcome to Petclinic"/></h2>
 
     <br/>
     <a class="btn btn-default" href='<spring:url value="/owners/new" htmlEscape="true"/>'>Search</a>
