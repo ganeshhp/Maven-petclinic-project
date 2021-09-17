@@ -274,6 +274,13 @@
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+        <dependency>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.0.2155</version>
+        </dependency>
+
     </dependencies>
 
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
@@ -398,33 +405,6 @@
     </reporting>
     <profiles>
 		<profile>
-			<id>bower-install</id>
-  			<build>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-                    <version>1.4.0</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>exec</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<executable>bower</executable>
-						<arguments>
-							<argument>install</argument>
-						</arguments>
-						<workingDirectory>${basedir}</workingDirectory>
-					</configuration>
-				</plugin>
-			</plugins>
-		  </build>
-		</profile>
-        <profile>
             <id>less-install</id>
             <build>
                 <plugins>
@@ -451,18 +431,17 @@
                 </plugins>
             </build>
         </profile>
-
-	<profile>
-		<id>sonar</id>
-		<activation>
-		<activeByDefault>true</activeByDefault>
-		</activation>
-		<properties>
+     	<profile>
+	    	<id>sonar</id>
+		    <activation>
+		      <activeByDefault>true</activeByDefault>
+		    </activation>
+		  <properties>
 	<!-- Optional URL to server. Default value is http://localhost:9000 -->
-		<sonar.host.url>
-			http://192.172.33.10:9000/
-		</sonar.host.url>
-		</properties>
+		 <sonar.host.url>
+			http://192.168.33.19:9000/
+	     </sonar.host.url>
+		  </properties>
 		</profile>
 	</profiles>
 	<url>demopetclinic</url>
