@@ -11,11 +11,11 @@ node ('master') {
   }
   
   stage ('build') {
-    sh 'mvn clean package'
+    bat 'mvn clean package'
   }
   
   stage ('artifact-repo'){   
-    sh 'curl -uuser1:AP2tXv3LMf5WVPWuRUdGVHCCa4B -T target/petclinic.war "https://pluforum.jfrog.io/artifactory/webapp-sample/petclinic.war"'
+    bat 'curl -uuser1:APEkqK6UcRQmCrj4AeR2DMkoMe -T target/petclinic.war "https://autofact.jfrog.io/artifactory/petclinic/petclinic.war"'
   }
 
   input 'proceed with artifact upload?'
