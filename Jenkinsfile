@@ -1,7 +1,7 @@
 
 node ('master') {
 
-  stage ('git') {
+  stage ('git-scm') {
     checkout changelog: false, 
         poll: false, 
         scm: [$class: 'GitSCM', 
@@ -10,24 +10,24 @@ node ('master') {
         userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]]
   }
   
-  stage ('mvn-build') {
+  stage ('maven') {
     sh 'mvn clean package'
   }
   
-  stage ('artifactory'){   
+  stage ('artifactory') {   
     sh 'curl -uuser1:AP2tXv3LMf5WVPWuRUdGVHCCa4B -T target/petclinic.war "https://pluforum.jfrog.io/artifactory/webapp-sample/petclinic.war"'
   }
 
-  input 'proceed with artifact upload?'
+  input 'Proceed with Deployment to Remote repo?'
   
-  stage ('html reports') {
+  stage ('publish HTML reports') {
     publishHTML([allowMissing: false, 
          alwaysLinkToLastBuild: false, keepAll: false, 
          reportDir: 'target/site/jacoco', 
          reportFiles: 'index.html', reportName: 'HTML Report', 
          reportTitles: 'test_report'])
   }
-  stage ('artifacts-archive') {
+  stage ('archive-artifacts') {
     archiveArtifacts artifacts: 'target/petclinic.war', followSymlinks: false
   }
 }
