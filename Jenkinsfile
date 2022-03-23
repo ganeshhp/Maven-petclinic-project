@@ -14,8 +14,8 @@ node ('master') {
     sh 'mvn clean package'
   }
   
-  stage ('artifactory') {   
-    sh 'curl -uuser1:AP2tXv3LMf5WVPWuRUdGVHCCa4B -T target/petclinic.war "https://pluforum.jfrog.io/artifactory/webapp-sample/petclinic.war"'
+  stage ('artifact-repo'){   
+    sh 'curl -uuser1:APEkqK6UcRQmCrj4AeR2DMkoMe -T target/petclinic.war "https://autofact.jfrog.io/artifactory/petclinic/petclinic.war"'
   }
 
   input 'Proceed with Deployment to Remote repo?'
