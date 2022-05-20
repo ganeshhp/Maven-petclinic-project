@@ -164,47 +164,6 @@ File -> Import -> Maven -> Existing Maven project
 </table>
 
 
-## Interaction with other open source projects
-
-One of the best parts about working on the Spring Petclinic application is that we have the opportunity to work in direct contact with many Open Source projects. We found some bugs/suggested improvements on various topics such as Spring, Spring Data, Bean Validation and even Eclipse! In many cases, they've been fixed/implemented in just a few days.
-Here is a list of them:
-
-<table>
-  <tr>
-    <th width="300px">Name</th>
-    <th width="300px"> Issue </th>
-  </tr>
-
-  <tr>
-    <td>Spring JDBC: simplify usage of NamedParameterJdbcTemplate</td>
-    <td> <a href="https://jira.springsource.org/browse/SPR-10256"> SPR-10256</a> and <a href="https://jira.springsource.org/browse/SPR-10257"> SPR-10257</a> </td>
-  </tr>
-  <tr>
-    <td>Bean Validation / Hibernate Validator: simplify Maven dependencies and backward compatibility</td>
-    <td>
-      <a href="https://hibernate.atlassian.net/browse/HV-790"> HV-790</a> and <a href="https://hibernate.atlassian.net/browse/HV-792"> HV-792</a>
-      </td>
-  </tr>
-  <tr>
-    <td>Spring Data: provide more flexibility when working with JPQL queries</td>
-    <td>
-      <a href="https://jira.springsource.org/browse/DATAJPA-292"> DATAJPA-292</a>
-      </td>
-  </tr>  
-  <tr>
-    <td>Eclipse: validation bug when working with .tag/.tagx files (has only been fixed for Eclipse 4.3 (Kepler)). <a href="https://github.com/spring-projects/spring-petclinic/issues/14">See here for more details.</a></td>
-    <td>
-      <a href="https://issuetracker.springsource.com/browse/STS-3294"> STS-3294</a>
-    </td>
-  </tr>    
-</table>
-
-
-# Contributing
-
-The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
-
-For pull requests, editor preferences are available in the [editor config](https://github.com/spring-projects/spring-petclinic/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
 
 
