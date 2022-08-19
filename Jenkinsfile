@@ -18,7 +18,7 @@ node ('master') {
     sh 'curl -uuser1:APEkqK6UcRQmCrj4AeR2DMkoMe -T target/petclinic.war "https://autofact.jfrog.io/artifactory/petclinic/petclinic.war"'
   }
 
-  input 'Proceed with Deployment to Remote repo?'
+  input 'Proceed with Deployment?'
   
   stage ('publish HTML reports') {
     publishHTML([allowMissing: false, 
