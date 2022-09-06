@@ -1,33 +1,36 @@
 
-node ('master') {
+node ('master') {   
 
-  stage ('git-scm') {
-    checkout changelog: false, 
-        poll: false, 
-        scm: [$class: 'GitSCM', 
-        branches: [[name: '*/master']], 
-        extensions: [], 
-        userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]]
-  }
-  
-  stage ('maven') {
-    sh 'mvn clean package'
-  }
-  
-  stage ('artifact-repo'){   
-    sh 'curl -uuser1:APEkqK6UcRQmCrj4AeR2DMkoMe -T target/petclinic.war "https://autofact.jfrog.io/artifactory/petclinic/petclinic.war"'
+  stage ('SCM') { 
+    checkout([$class: 'GitSCM', 
+       branches: [[name: '*/master']], 
+       extensions: [], 
+       userRemoteConfigs: [[url: 'https://github.com/ganeshhp/Maven-petclinic-project.git']]])
+
   }
 
-  input 'Proceed with Deployment?'
-  
-  stage ('publish HTML reports') {
+  stage ('app_build') {
+    
+      sh 'mvn clean install'
+  }
+  stage ('plublish_reports') {
     publishHTML([allowMissing: false, 
-         alwaysLinkToLastBuild: false, keepAll: false, 
-         reportDir: 'target/site/jacoco', 
-         reportFiles: 'index.html', reportName: 'HTML Report', 
-         reportTitles: 'test_report'])
+        alwaysLinkToLastBuild: false, 
+        keepAll: false, 
+        reportDir: 'target/site/jacoco', 
+        reportFiles: 'index.html', 
+        reportName: 'Test_reports', reportTitles: ''])
+    }
+  
+  input 'Do you want to Proceed with deployment?'
+
+  stage ('deploy_to_artifactory') {
+    sh 'curl -uuser1:APe8TNpyXKCb8VLuunDCEJcab2 -T target/petclinic.war "https://ganeshpalnitkar.jfrog.io/artifactory/Helloworldapp-repo/petclinic.war"'
   }
-  stage ('archive-artifacts') {
-    archiveArtifacts artifacts: 'target/petclinic.war', followSymlinks: false
+
+  stage ('archive') {
+    archiveArtifacts artifacts: 'target/petclinic.war', 
+       followSymlinks: false
   }
+
 }
