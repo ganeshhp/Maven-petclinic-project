@@ -1,0 +1,33 @@
+default:
+  image: maven:3.8.6-openjdk-8
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+#  tags:
+#    - maven
+  script:
+    - mvn clean compile
+
+test-job1:
+  stage: test
+#  tags:
+##    - maven
+  script:
+    - mvn clean package
+  artifacts:
+    paths:
+       - target/
+
+deploy-prod:
+  stage: deploy
+#  tags:
+#    - maven
+  script:
+    - mvn install
+    - 'curl -ugitlab:cmVmdGtuOjAxOjE3MTgyOTU5MDY6THQ2VGlWWktPNzF3OXFGdjRDazB0cjlYQlNr -T target/*.war "https://palnitkarganesh.jfrog.io/artifactory/project10-repo/petclinic.war"'
+
+
